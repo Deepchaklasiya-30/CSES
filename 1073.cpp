@@ -1,20 +1,17 @@
-
-	int n;
+int n;
 	cin>>n;
-	int cnt=0;
-	multiset<int>m;
+	vi v(n);
+	for(int &x:v) cin>>x;
+	set<int>s;
+	int cnt=0,ans=0;
 	f(i,0,n)
 	{
-		int x;
-		cin>>x;
-		auto it=m.upper_bound(x);
-		if(it==m.end())
+		while(s.count(v[i])>0)
 		{
+			s.erase(v[cnt]);
 			cnt++;
-			m.insert(x);
-		    continue;
 		}
-		m.erase(it);
-		m.insert(x);
+		s.insert(v[i]);
+		ans=max(ans,i-cnt);
 	}
-	cout<<cnt;
+	cout<<ans+1;

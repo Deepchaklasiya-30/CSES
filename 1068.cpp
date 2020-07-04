@@ -1,8 +1,8 @@
 cin>>n;
-    while(n!=1)
+    int sum1=(n*(n+1))/2,sum2=0;
+    fo(i,1,n)
     {
-    	cout<<n<<" ";
-    	if(n%2==1) n=3*n+1;
-    	else if(n%2==0) n/=2;
+    	cin>>x;
+    	sum2+=x;
 	}
-	cout<<"1";
+	cout<<sum1-sum2;

@@ -1,17 +1,8 @@
-int n;
-	cin>>n;
-	vi v(n);
-	for(int &x:v) cin>>x;
-	set<int>s;
-	int cnt=0,ans=0;
-	f(i,0,n)
-	{
-		while(s.count(v[i])>0)
-		{
-			s.erase(v[cnt]);
-			cnt++;
-		}
-		s.insert(v[i]);
-		ans=max(ans,i-cnt);
+cin>>n;
+    while(n!=1)
+    {
+    	cout<<n<<" ";
+    	if(n%2==1) n=3*n+1;
+    	else if(n%2==0) n/=2;
 	}
-	cout<<ans+1;
+	cout<<"1";
